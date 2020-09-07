@@ -1,0 +1,41 @@
+<<%- include('../partials/header') -%>
+
+<div class="container"   >
+   <div class="row" style=" text-align: center; margin: 50px 100px" >
+        <h1 style="margin-left: 250px;" >Edit : <%= campground.name %>  </h1>
+
+       <div style="width: 30%;margin:  0px 100px 0px 250px   "  >
+	
+	           <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" style="  padding-top: 20%" >
+	             <div>
+                  <label for="location">Name:</label>
+                 <input type="text" name="campground[name]"  value="<%= campground.name %>"  class="form-control" > 
+               </div>
+               <div class="form-group" style="margin-top: 10px" >
+                 <label for="location">Price:</label>
+                 <input type="number" name="campground[price]" value ="<%= campground.price %>" class="form-control" min="0.01" step="0.01" >
+               </div>
+	              <div>
+                   <label for="location">Image:</label>
+                  <input style="margin-top: 10px" type="text" name="campground[image]" value="<%= campground.image %>" class="form-control"> 
+                </div>
+                <div>
+                  <label for="location">Description:</label>
+                  <input style="margin-top: 10px" type="text" name="campground[description]" class="form-control" value="<%= campground.description %>">
+                </div>
+                    <!-- <div class="form-group">
+                            <label for="location">Location:</label>
+                            <input class="form-control" type="text" name="location" id="location" value="<= campground.location %>">
+                    </div> -->
+                   <button  class="btn btn-lg btn-primary" style="margin: 25px auto; " >Submit!</button> 
+               </form>
+
+               <a  href="/campgrounds" >Go Back</a>
+        </div>
+
+
+           
+    </div>
+
+</div>
+<%- include('../partials/footer') -%>

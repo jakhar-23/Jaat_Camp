@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<%- include ('../partials/header') -%>
+
+<div class="container  " style="margin: 35px  auto;"  >
+
+	<header class="jumbotron img-fluid max-width: 100%  height:auto"  style="background-image: url(https://images.unsplash.com/photo-1583954093764-26d99639e8de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80); background-size: 100%" >
+ <div class="container" > 
+ 	  <h1 style="text-align: center; " > WELCOME TO JAAT CAMP!...</h1>
+      <p>
+       <span style="color: #ffffdd;" > view our hand picked campgrounds from all over the world!..</span> </p>
+        <p>
+	      <a class=" btn btn-primary btn-large" href="/campgrounds/new">   Add New Campground </a>
+       </p>
+  </div>
+</header>
+
+  <div class="row " style="display:flex; flex-wrap: wrap; <%  { -%>
+    
+  <% } -%>" >
+      <% campgrounds.forEach(function(campground){ %>
+      <div class="col-md-3 col-sm-6" >
+               <div  class= "img-fluid img-thumbnail rounded mx-auto d-block " style="margin-top: 30px" >
+               	   <img  alt="Responsive image" class="rounded img-fluid " src="<%= campground.image %>">
+               
+               	   <div class="caption" >
+               	   	
+ 	    	               <h3><%= campground.name %></h3>
+               	   </div>
+                   <p>
+                     <a href="/campgrounds/<%= campground.id %>" class="btn btn-primary">MORE INFO</a>
+                   </p> 
+ 	            </div>
+      </div>
+       <% }); %>
+  </div>
+
+ <%- include('../partials/footer') -%>
