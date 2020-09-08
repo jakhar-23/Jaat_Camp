@@ -18,7 +18,7 @@
   var commentRoutes    = require("./routes/comments"),
       campgroundRoutes = require("./routes/campgrounds"),
       indexRoutes      = require("./routes/index")
-      public           = require("./public/landing.css")
+     
 // mongoose.connect("mongodb://localhost:27017/jaat_campDB", {useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false });
 mongoose.connect("mongodb+srv://admin-JAAT:Jaat@123456789@jaatcamp.fkygs.mongodb.net/jaat_campDB", {useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false });
 app.use(bodyParser.urlencoded({extended: true}));
