@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({extended: true}));
  // ################ seed the database
  // seedDB();
  // ################
-
+app.locals.moment = require('moment');
  // PASSPORT CONFIGURATION
 app.use(require("express-session")({
   secret: "JAAT BALWAN JAI BHAGWAAN",
