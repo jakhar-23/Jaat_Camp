@@ -19,7 +19,8 @@
       campgroundRoutes = require("./routes/campgrounds"),
       indexRoutes      = require("./routes/index")
 
-mongoose.connect("mongodb://localhost:27017/yelp_campfinalDB", {useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false });
+// mongoose.connect("mongodb://localhost:27017/jaat_campDB", {useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false });
+mongoose.connect("mongodb+srv://admin-JAAT:Jaat@123456789@jaatcamp.fkygs.mongodb.net/jaat_campDB", {useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false });
 app.use(bodyParser.urlencoded({extended: true}));
  app.set("view engine", "ejs");
  app.use(express.static(__dirname + "/public"));
@@ -70,8 +71,12 @@ app.use(campgroundRoutes);
 app.use(commentRoutes);
 
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 
-app.listen(3000, function(req, res){
-	console.log("Hurrayyyyyy!!!.. THE YELP-CAMP SERVER HAS STARTED......"); 
+app.listen(port, function(req, res){
+	console.log("Hurrayyyyyy!!!.. THE JAAT-CAMP SERVER HAS STARTED......"); 
 });
