@@ -24,7 +24,7 @@ mongoose.connect("mongodb+srv://admin-JAAT:Jaat@123456789@jaatcamp.fkygs.mongodb
 app.use(bodyParser.urlencoded({extended: true}));
  app.set("view engine", "ejs");
 
- app.use(express.static(__dirname + "/public"));
+ // app.use(express.static(__dirname + "/public"));
    app.use('/public', express.static(path.join(__dirname, "/public")));
  app.use(methodOverride("_method"));
  app.use(flash());
