@@ -18,14 +18,14 @@
   var commentRoutes    = require("./routes/comments"),
       campgroundRoutes = require("./routes/campgrounds"),
       indexRoutes      = require("./routes/index")
-
+      public           = require("./public/landing.css")
 // mongoose.connect("mongodb://localhost:27017/jaat_campDB", {useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false });
 mongoose.connect("mongodb+srv://admin-JAAT:Jaat@123456789@jaatcamp.fkygs.mongodb.net/jaat_campDB", {useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false });
 app.use(bodyParser.urlencoded({extended: true}));
  app.set("view engine", "ejs");
 
- // app.use(express.static(__dirname + "/public"));
-   app.use('/public', express.static(path.join(__dirname, "../public")));
+ app.use(express.static(__dirname + "/public"));
+   app.use('/public', express.static(path.join(__dirname, "./public")));
  app.use(methodOverride("_method"));
  app.use(flash());
 
