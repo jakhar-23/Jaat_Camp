@@ -1,10 +1,11 @@
 <%- include ('./partials/header') -%>
    
 
-   <div class="row" style="margin-left: 150px">
+<div class="row" style="margin-left: 150px">
+    
         <h1 style="text-align: center; margin: 50px 100px 0px 400px">Login</h1>
         <div style="width: 30%; margin:  25px 300px;">
-            <form action="/login" method="post">
+            <form class="col-sm-12 col-md-12" action="/login" method="post">
                 <div class="form-group">
                     <input class="form-control" type="text" name="username" placeholder="username">
                 </div>
@@ -17,7 +18,8 @@
             </form>
             <a href="/campgrounds">Go Back</a>
         </div>
-    </div>
+    
+ </div>
 
 
 <%- include ('./partials/footer') -%>
